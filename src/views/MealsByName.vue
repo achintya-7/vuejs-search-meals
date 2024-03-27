@@ -26,7 +26,18 @@
     import Meals from '../components/Meals.vue';
 
     const keyword = ref('');
-    const meals = computed(() => store.state.searchedMeals);
+    import { computed, useStore } from 'vuex';
+
+    export default {
+        setup() {
+            const store = useStore();
+            const meals = computed(() => store.getters.searchedMeals);
+
+            return {
+                meals
+            };
+        }
+    }
 
     function searchMeals() {
         if (keyword.value) {

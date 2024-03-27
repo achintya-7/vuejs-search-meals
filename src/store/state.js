@@ -1,3 +1,6 @@
 export default {
-    searchedMeals: [],    
+    searchReports: {
+        reports: [],
+        loading: false,
+    }    
 }
